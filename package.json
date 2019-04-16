@@ -1,0 +1,12 @@
+{
+  "name": "join-us-mysql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ElijahPrince73/join-us-mysql.git",
+  "author": "Elijah Prince <elijahprince73@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "faker": "^4.1.0",
+    "mysql": "^2.16.0"
+  }
+}

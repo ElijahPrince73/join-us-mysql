@@ -8,10 +8,20 @@ const connection = mysql.createConnection({
     password: 'password'
 })
 
-const q = 'SELECT 1 + 5 AS answer';
+var data = [];
+for (var i = 0; i < 500; i++) {
+    data.push([
+        faker.internet.email(),
+        faker.date.past()
+    ]);
+}
 
-connection.query(q, function(error, results, fields)  {
-    console.log(results[0]);
-})
 
-connection.end()
+var q = 'INSERT INTO users (email, create_ad) VALUES ?';
+
+connection.query(q, [data], function (err, result) {
+    console.log(err);
+    console.log(result);
+});
+
+connection.end();
